@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Профиль WARNING</title>
     <style>
         * {
@@ -16,39 +17,38 @@
             background-color: #0d0d0d;
             font-family: Arial, sans-serif;
             color: white;
-            overflow: hidden; /* Запрет прокрутки */
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .profile-container {
-            position: relative;
-            width: 95vw;
-            max-width: 600px;
+            width: 90vw;
+            max-width: 500px;
             background-color: #1a1a1a;
             border: 2px solid #333;
             border-radius: 10px;
             overflow: hidden;
-
-            transform: scale(1.6);  /* Увеличение конструкции */
+            text-align: center;
         }
 
         /* Баннер */
         .banner {
-            background: url('URL_ДЛЯ_БАННЕРА') no-repeat center center;
-            background-size: cover;
-            width: 115%;
-            height: 250px;
-            position: relative;
-            left: -7.5%;
+            background: url('URL_ДЛЯ_БАННЕРА') no-repeat center/cover;
+            width: 100%;
+            height: 180px;
+        }
+
+        /* Контейнер для аватара и ника */
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: -50px;
         }
 
         /* Аватар */
         .avatar {
-            position: absolute;
-            top: 30px;
-            left: 30px;
             width: 100px;
             height: 100px;
             background: url('URL_ДЛЯ_АВАТАРКИ') no-repeat center/cover;
@@ -58,26 +58,23 @@
 
         /* Ник */
         .nickname {
-            position: absolute;
-            top: 50px;
-            left: 150px;
-            font-size: 30px;
+            font-size: 24px;
             font-weight: bold;
             color: #FF4500;
+            margin-top: 10px;
         }
 
-        /* Роли (вертикально) */
+        /* Роли */
         .roles {
-            position: absolute;
-            top: 90px; 
-            left: 150px;
             display: flex;
-            flex-direction: column; 
-            gap: 5px;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 10px;
         }
 
         .roles img {
-            width: 120px;
+            width: 90px;
             height: auto;
             border-radius: 8px;
         }
@@ -87,7 +84,7 @@
             background-color: rgba(0, 0, 0, 0.7);
             padding: 14px;
             border-radius: 10px;
-            margin: 50px 20px 10px;
+            margin: 20px;
             font-size: 16px;
         }
 
@@ -98,6 +95,13 @@
         .info i {
             font-style: italic;
         }
+
+        /* Адаптивность */
+        @media (max-width: 500px) {
+            .roles img {
+                width: 80px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -106,8 +110,10 @@
         <div class="banner"></div>
 
         <!-- Аватар и ник -->
-        <div class="avatar"></div>
-        <div class="nickname">WARNING</div>
+        <div class="profile-header">
+            <div class="avatar"></div>
+            <div class="nickname">WARNING</div>
+        </div>
 
         <!-- Роли -->
         <div class="roles">
@@ -119,7 +125,7 @@
         <div class="info">
             <p>Боец</p>
             <p>Регистрация: <strong>4 Май 2023</strong></p>
-            <p>Активность: <strong>Каждый день</strong></p>
+            <p>Активность: <strong>13 мин. назад</strong></p>
             <p>Просматривает профиль пользователя <i>WARNING</i></p>
         </div>
     </div>
