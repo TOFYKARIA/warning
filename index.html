@@ -23,28 +23,29 @@
         }
 
         .profile-container {
-            width: 90vw;
-            max-width: 500px;
+            width: 95vw;
+            max-width: 600px;
             background-color: #1a1a1a;
             border: 2px solid #333;
             border-radius: 10px;
             overflow: hidden;
-            text-align: center;
         }
 
         /* Баннер */
         .banner {
             background: url('URL_ДЛЯ_БАННЕРА') no-repeat center/cover;
-            width: 100%;
-            height: 180px;
+            width: 115%;
+            height: 250px;
+            position: relative;
+            left: -7.5%;
         }
 
-        /* Контейнер для аватара и ника */
+        /* Контейнер для аватара, ника и ролей */
         .profile-header {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            margin-top: -50px;
+            padding: 20px;
+            gap: 15px;
         }
 
         /* Аватар */
@@ -56,25 +57,29 @@
             border: 5px solid black;
         }
 
+        /* Блок с ником и ролями */
+        .nickname-roles {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
         /* Ник */
         .nickname {
-            font-size: 24px;
+            font-size: 30px;
             font-weight: bold;
             color: #FF4500;
-            margin-top: 10px;
         }
 
         /* Роли */
         .roles {
             display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            padding: 10px;
+            flex-direction: column;
+            gap: 5px;
         }
 
         .roles img {
-            width: 90px;
+            width: 120px;
             height: auto;
             border-radius: 8px;
         }
@@ -84,7 +89,7 @@
             background-color: rgba(0, 0, 0, 0.7);
             padding: 14px;
             border-radius: 10px;
-            margin: 20px;
+            margin: 10px 20px;
             font-size: 16px;
         }
 
@@ -98,8 +103,14 @@
 
         /* Адаптивность */
         @media (max-width: 500px) {
+            .profile-header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+
             .roles img {
-                width: 80px;
+                width: 100px;
             }
         }
     </style>
@@ -109,16 +120,16 @@
         <!-- Баннер -->
         <div class="banner"></div>
 
-        <!-- Аватар и ник -->
+        <!-- Аватар, ник и роли -->
         <div class="profile-header">
             <div class="avatar"></div>
-            <div class="nickname">WARNING</div>
-        </div>
-
-        <!-- Роли -->
-        <div class="roles">
-            <img src="URL_ДЛЯ_РОЛИ_1" alt="Роль 1">
-            <img src="URL_ДЛЯ_РОЛИ_2" alt="Роль 2">
+            <div class="nickname-roles">
+                <div class="nickname">WARNING</div>
+                <div class="roles">
+                    <img src="URL_ДЛЯ_РОЛИ_1" alt="Роль 1">
+                    <img src="URL_ДЛЯ_РОЛИ_2" alt="Роль 2">
+                </div>
+            </div>
         </div>
 
         <!-- Информация -->
