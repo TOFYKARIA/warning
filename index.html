@@ -71,17 +71,27 @@
             text-align: center;
         }
 
-        /* Роли (горизонтально) */
+        /* Роли с фоновыми цветами */
         .roles {
             display: flex;
-            justify-content: center;
-            gap: 10px; /* Расстояние между ролями */
+            gap: 10px;
         }
 
-        .roles img {
-            width: 100px; /* Размер значков ролей */
-            height: auto;
-            border-radius: 8px;
+        .role {
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .role-legend {
+            background-color: #FF4500; /* Оранжевый фон для "Легенды" */
+            color: white;
+        }
+
+        .role-user {
+            background-color: #800080; /* Фиолетовый фон для "Пользователя" */
+            color: white;
         }
 
         /* Информация (вернул на место) */
@@ -133,8 +143,8 @@
             <div class="avatar"></div>
             <div class="nickname">WARNING</div>
             <div class="roles">
-                <img src="URL_ДЛЯ_РОЛИ_1" alt="Роль 1">
-                <img src="URL_ДЛЯ_РОЛИ_2" alt="Роль 2">
+                <div class="role role-legend">Легенда</div>
+                <div class="role role-user">Пользователь</div>
             </div>
         </div>
 
