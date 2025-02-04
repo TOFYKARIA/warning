@@ -29,6 +29,8 @@
             border: 2px solid #333;
             border-radius: 10px;
             overflow: hidden;
+            position: relative;
+            padding-bottom: 20px; /* Чуть увеличил высоту контейнера */
         }
 
         /* Баннер */
@@ -42,55 +44,54 @@
 
         /* Контейнер для аватара, ника и ролей */
         .profile-header {
+            position: absolute;
+            top: 130px; /* Сдвинуто ниже */
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
+            flex-direction: column;
             align-items: center;
-            padding: 20px;
-            gap: 15px;
+            gap: 8px;
         }
 
         /* Аватар */
         .avatar {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             background: url('URL_ДЛЯ_АВАТАРКИ') no-repeat center/cover;
             border-radius: 50%;
             border: 5px solid black;
         }
 
-        /* Блок с ником и ролями */
-        .nickname-roles {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
         /* Ник */
         .nickname {
-            font-size: 30px;
+            font-size: 28px;
             font-weight: bold;
             color: #FF4500;
+            text-align: center;
         }
 
-        /* Роли */
+        /* Роли (горизонтально) */
         .roles {
             display: flex;
-            flex-direction: column;
-            gap: 5px;
+            justify-content: center;
+            gap: 10px; /* Расстояние между ролями */
         }
 
         .roles img {
-            width: 120px;
+            width: 100px; /* Размер значков ролей */
             height: auto;
             border-radius: 8px;
         }
 
-        /* Информация */
+        /* Информация (вернул на место) */
         .info {
             background-color: rgba(0, 0, 0, 0.7);
             padding: 14px;
             border-radius: 10px;
-            margin: 10px 20px;
+            margin: 60px 20px 10px; /* Вернул нормальный отступ сверху */
             font-size: 16px;
+            text-align: center;
         }
 
         .info p {
@@ -104,13 +105,20 @@
         /* Адаптивность */
         @media (max-width: 500px) {
             .profile-header {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 15px;
+                top: 110px; /* Чуть ниже для телефонов */
+            }
+
+            .avatar {
+                width: 100px;
+                height: 100px;
+            }
+
+            .nickname {
+                font-size: 24px;
             }
 
             .roles img {
-                width: 100px;
+                width: 90px;
             }
         }
     </style>
@@ -123,16 +131,14 @@
         <!-- Аватар, ник и роли -->
         <div class="profile-header">
             <div class="avatar"></div>
-            <div class="nickname-roles">
-                <div class="nickname">WARNING</div>
-                <div class="roles">
-                    <img src="URL_ДЛЯ_РОЛИ_1" alt="Роль 1">
-                    <img src="URL_ДЛЯ_РОЛИ_2" alt="Роль 2">
-                </div>
+            <div class="nickname">WARNING</div>
+            <div class="roles">
+                <img src="URL_ДЛЯ_РОЛИ_1" alt="Роль 1">
+                <img src="URL_ДЛЯ_РОЛИ_2" alt="Роль 2">
             </div>
         </div>
 
-        <!-- Информация -->
+        <!-- Информация (вернул на место) -->
         <div class="info">
             <p>Боец</p>
             <p>Регистрация: <strong>4 Май 2023</strong></p>
