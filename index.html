@@ -138,6 +138,28 @@
             .roles img {
                 width: 90px;
             }
+
+            
+        /* Эффект снега */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: white;
+            font-size: 14px;
+            opacity: 0.8;
+            user-select: none;
+            animation: snowfall linear infinite;
+        }
+
+        @keyframes snowfall {
+            0% {
+                transform: translateY(0px) translateX(0);
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(100vh) translateX(var(--end-x));
+                opacity: 0;
+            }
         }
     </style>
 </head>
@@ -165,5 +187,29 @@
             <p> <i>isizisiz</i></p>
         </div>
     </div>
+    
+    <script>
+        const snowflakeCount = 50;
+
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.textContent = '❄';
+            snowflake.className = 'snowflake';
+            snowflake.style.left = `${Math.random() * 100}vw`;
+            snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`;
+            snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
+            snowflake.style.setProperty('--end-x', `${Math.random() * 200 - 100}px`);
+            document.body.appendChild(snowflake);
+
+            snowflake.addEventListener('animationend', () => {
+                snowflake.remove();
+                createSnowflake();
+            });
+        }
+
+        for (let i = 0; i < snowflakeCount; i++) {
+            setTimeout(createSnowflake, Math.random() * 5000);
+        }
+    </script>
 </body>
 </html>
