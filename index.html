@@ -30,7 +30,7 @@
             border-radius: 10px;
             overflow: hidden;
             position: relative;
-            padding-bottom: 20px; /* Чуть увеличил высоту контейнера */
+            padding-bottom: 20px;
         }
 
         /* Баннер */
@@ -45,7 +45,7 @@
         /* Контейнер для аватара, ника и ролей */
         .profile-header {
             position: absolute;
-            top: 110px; /* Сдвинуто ниже */
+            top: 110px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -72,12 +72,20 @@
             text-align: center;
         }
 
-        /* Роли с фоновыми цветами */
+        /* Контейнер для ролей */
+        .roles-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            width: 100%;
+            margin-top: -5px;
+        }
+
         .roles {
             display: flex;
             gap: 10px;
-            justify-content: center; /* Выравниваем по центру */
-            width: 100%;
+            justify-content: center;
         }
 
         .role {
@@ -87,28 +95,37 @@
             font-weight: bold;
         }
 
+        .role-skrep {
+            background-color: #808080; /* Серый фон для "Скрепочка" */
+            color: white;
+        }
+
         .role-legend {
-            background-color: #FF4500; /* Оранжевый фон для "Легенды" */
+            background-color: #FF4500; /* Оранжевый фон для "Легенда" */
             color: white;
         }
 
         .role-leaf {
-            background-color: #808080; /* Зеленый фон для "Листочек" */
+            background-color: #34C924; /* Зелёный фон для "Листочек" */
             color: white;
         }
 
-        .role-user {
-            background-color: #34C924; /* Фиолетовый фон для "Пользователя" */
+        .role-extra {
+            background-color: #6200ea; /* Фиолетовый фон для "Ещё роль" */
             color: white;
-            margin-top: 0px; /* Добавляем отступ, чтобы роль была ниже */
         }
 
-        /* Информация (вернул на место) */
+        .role-bottom {
+            background-color: #d4af37; /* Золотой фон для нижней роли */
+            color: white;
+        }
+
+        /* Информация */
         .info {
             background-color: rgba(0, 0, 0, 0.7);
             padding: 14px;
             border-radius: 10px;
-            margin: 80px 20px 10px; /* Вернул нормальный отступ сверху */
+            margin: 110px 20px 10px;
             font-size: 16px;
             text-align: center;
         }
@@ -121,21 +138,7 @@
             font-style: italic;
         }
 
-
-            .avatar {
-                width: 120px;
-                height: 120px;
-            }
-
-            .nickname {
-                font-size: 24px;
-            }
-
-            .roles img {
-                width: 90px;
-            }
-
-       /* Эффект снега */
+        /* Эффект снега */
         .snowflake {
             position: fixed;
             top: -10px;
@@ -165,24 +168,31 @@
 
         <!-- Аватар, ник и роли -->
         <div class="profile-header">
-            <div class="avatar">🫧 </div>
+            <div class="avatar"></div>
             <div class="nickname">MQVON</div>
-            <div class="roles">
-                <div class="role role-leaf">Скрепочка</div>
-                <div class="role role-legend">Легенда</div>
+
+            <div class="roles-container">
+                <div class="roles">
+                    <div class="role role-skrep">Скрепочка</div>
+                    <div class="role role-legend">Легенда</div>
+                </div>
+                <div class="roles">
+                    <div class="role role-leaf">Листочек</div>
+                    <div class="role role-extra">👾👾👾</div>
+                </div>
+                <div class="role role-bottom">💫💫💫</div>
             </div>
-            <div class="role role-user">Листочек</div>
         </div>
 
-        <!-- Информация (вернул на место) -->
+        <!-- Информация -->
         <div class="info">
             <p>Боец</p>
             <p>ID:<strong> </strong>1688880140</p>
-            <p>USERNAME:</strong>@MQVON</p>
-            <p> <i>isizisiz</i></p>
+            <p>USERNAME: <strong>@MQVON</strong></p>
+            <p><i>isizisiz</i></p>
         </div>
     </div>
- <script>
+    <script>
         const snowflakeCount = 50;
 
         function createSnowflake() {
@@ -205,7 +215,5 @@
             setTimeout(createSnowflake, Math.random() * 5000);
         }
     </script>
-</body>
-</html>
 </body>
 </html>
